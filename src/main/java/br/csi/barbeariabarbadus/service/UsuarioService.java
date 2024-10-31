@@ -5,6 +5,7 @@ import br.csi.barbeariabarbadus.model.UsuarioRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class UsuarioService {
@@ -13,9 +14,11 @@ public class UsuarioService {
     public UsuarioService(UsuarioRepository repository){this.repository = repository;}
     public void salvar(Usuario usuario){this.repository.save(usuario);}
     public List<Usuario> listar(){return this.repository.findAll();}
-    public Usuario findById(Integer id){
-        return this.repository.findById(id).get();
-    }
+
+    public Usuario getUsuario(Integer id){return this.repository.findById(id).get();}
+
+    public void excluir(Integer id){this.repository.deleteById(id);}
+
 
     public void atualizar(Usuario usuario){
         Usuario u = this.repository.getReferenceById(usuario.getIdusuario());
@@ -23,11 +26,27 @@ public class UsuarioService {
         u.setEmail(usuario.getEmail());
         u.setSenha(usuario.getSenha());
         u.setAtivo(usuario.isAtivo());
+        u.setPermissao(usuario.getPermissao());
         this.repository.save(u);
     }
 
-    public void excluir(Integer id){this.repository.deleteById(id);}
+    public void atualizarUUID(Usuario usuario){
+        Usuario a = this.repository.findUsuarioByUuid(usuario.getUuid());
+        a.setNome(usuario.getNome());
+        a.setEmail(usuario.getEmail());
+        a.setSenha(usuario.getSenha());
+        a.setAtivo(usuario.isAtivo());
+        a.setPermissao(usuario.getPermissao());
+        this.repository.save(a);
+    }
 
+    public Usuario getUsuarioUUID(String uuid) {
+        UUID uuidformatado = UUID.fromString(uuid);
+        return this.repository.findUsuarioByUuid(uuidformatado);
+    }
 
+    public void deletarUUID(String uuid){
+        this.repository.deleteUsuarioByUuid(UUID.fromString(uuid));
+    }
 
 }

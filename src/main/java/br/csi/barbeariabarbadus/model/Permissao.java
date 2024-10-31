@@ -1,5 +1,6 @@
 package br.csi.barbeariabarbadus.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -10,6 +11,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor
+@Schema(description = "Entidade que representa o nível de permissões que o usuário possui no sistema")
 public class Permissao {
 
     @Id
@@ -17,6 +19,7 @@ public class Permissao {
     private Integer idpermissao;
 
     @NonNull
+    @Schema(description = "Nome da permissao", example = "Funcionario")
     private String nome_permissao;
 
 }
