@@ -33,8 +33,8 @@ public class UsuarioController {
     public List<Usuario> listar(){
         return this.service.listar();
     }
-    /* http://localhost:8080/barbearia-barbadus/usuario/1 */
 
+    /* http://localhost:8080/barbearia-barbadus/usuario/1 */
     @GetMapping("/{id}")
     @Operation(summary = "Buscar usuário por ID", description = "Retorna um usuário correspondente ao ID escolhido")
     @ApiResponses(value = {
