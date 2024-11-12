@@ -43,4 +43,12 @@ public class VendaService {
         this.repository.save(v);
     }
 
+    public List<Venda> getVendasPorUsuario(Integer idUsuario) {
+        return repository.findByVendedorIdusuario(idUsuario);
+    }
+
+    public List<Venda> getVendasPorProduto(Integer idProduto) {
+        return repository.findByProdutoIdproduto(idProduto);
+    }
+
 }

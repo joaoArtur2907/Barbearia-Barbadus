@@ -378,6 +378,28 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Get todas vendas de usuário especifico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/barbearia-barbadus/venda/usuario/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"barbearia-barbadus",
+						"venda",
+						"usuario",
+						"2"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

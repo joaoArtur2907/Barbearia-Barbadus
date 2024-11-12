@@ -93,4 +93,42 @@ public class VendaController {
     }
 
 
+
+//    http://localhost:8080/barbearia-barbadus/venda/usuario/{idUsuario}
+
+    @GetMapping("/usuario/{idUsuario}")
+    @Operation(summary = "Buscar vendas por usuário", description = "Retorna todas as vendas feitas por um usuário específico")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Vendas encontradas",
+                    content = @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = Venda.class))),
+            @ApiResponse(responseCode = "404", description = "Usuário ou vendas não encontradas", content = @Content)
+    })
+    public ResponseEntity<List<Venda>> vendasPorUsuario(@Parameter(description = "ID do usuário vendedor") @PathVariable Integer idUsuario) {
+        List<Venda> vendas = this.service.getVendasPorUsuario(idUsuario);
+        if (vendas.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(vendas);
+    }
+
+
+//    http://localhost:8080/barbearia-barbadus/venda/produto/{idproduto}
+    @GetMapping("/produto/{idProduto}")
+    @Operation(summary = "Listar vendas por produto", description = "Retorna todas as vendas feitas de um produto com base no ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Vendas encontradas",
+                    content = @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = Venda.class))),
+            @ApiResponse(responseCode = "404", description = "Nenhuma venda encontrada com ese produto", content = @Content)
+    })
+    public ResponseEntity<List<Venda>> vendasPorProduto(
+            @Parameter(description = "ID do produto para listar vendas") @PathVariable Integer idProduto) {
+        List<Venda> vendas = service.getVendasPorProduto(idProduto);
+        if (vendas.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(vendas);
+    }
+
 }
