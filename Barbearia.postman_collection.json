@@ -1,0 +1,383 @@
+{
+	"info": {
+		"_postman_id": "11d2ac1f-b014-440a-9cd8-d130b3d8f75f",
+		"name": "Barbearia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39401863"
+	},
+	"item": [
+		{
+			"name": "Add permissão",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome_permissao\": \"teste\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/barbearia-barbadus/permissao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"barbearia-barbadus",
+						"permissao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listarPermissoes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/barbearia-barbadus/permissao/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"barbearia-barbadus",
+						"permissao",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletaPermissao",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/barbearia-barbadus/permissao/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"barbearia-barbadus",
+						"permissao",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"João Silva\",\r\n    \"email\": \"joao@gmail.com\",\r\n    \"senha\": \"senhaNaoSegura1235\",\r\n    \"ativo\": true,\r\n    \"permissao\": {\r\n        \"idpermissao\": 2  \r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/barbearia-barbadus/usuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"barbearia-barbadus",
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/barbearia-barbadus/usuario/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"barbearia-barbadus",
+						"usuario",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleta Usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/barbearia-barbadus/usuario/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"barbearia-barbadus",
+						"usuario",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add produto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome_produto\": \"Shampoo exclui\",\r\n    \"preco\": 39.99,\r\n    \"descricao\": \"Shampoo bd, para cabelos secos e asdasdasd. 500ml\",\r\n    \"img\": \"https://exemplo.com/imagens/shampoo-doeve.jpg\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/barbearia-barbadus/produto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"barbearia-barbadus",
+						"produto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar Produtos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/barbearia-barbadus/produto/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"barbearia-barbadus",
+						"produto",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Produto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/barbearia-barbadus/produto/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"barbearia-barbadus",
+						"produto",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Venda",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"vendedor\": {\r\n        \"idusuario\": 1\r\n    },\r\n    \"comprador\": {\r\n        \"idusuario\": 2\r\n    },\r\n    \"produto\": {\r\n        \"idproduto\": 1\r\n    },\r\n    \"valor\": 50.75,\r\n    \"quantia\": 2\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/barbearia-barbadus/venda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"barbearia-barbadus",
+						"venda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Venda",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/barbearia-barbadus/venda/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"barbearia-barbadus",
+						"venda",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get usuario por UUID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/barbearia-barbadus/usuario/uuid/506ab819-ee01-41bf-ba3b-fa38c656c3a0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"barbearia-barbadus",
+						"usuario",
+						"uuid",
+						"506ab819-ee01-41bf-ba3b-fa38c656c3a0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar usuario por UUID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"uuid\": \"506ab819-ee01-41bf-ba3b-fa38c656c3a0\",\r\n    \"nome\": \"João Silva Atualizado\",\r\n    \"email\": \"joao.silva.Atualizado@example.com\",\r\n    \"senha\": \"novissimaSenha123\",\r\n    \"ativo\": true,\r\n    \"permissao\": {\r\n        \"idpermissao\": 2  \r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/barbearia-barbadus/usuario/uuid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"barbearia-barbadus",
+						"usuario",
+						"uuid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar produto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idproduto\": 1,\r\n    \"nome_produto\": \"Shampoo Dove atualizado\",\r\n    \"descricao\": \"Shampoo Dove, para cabelos lisos e quebradicos. 2l atualizado\",\r\n    \"preco\": 59.99,\r\n    \"img\": \"https://exemplo.com/imagens/shampoo-dove.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/barbearia-barbadus/produto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"barbearia-barbadus",
+						"produto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar usuario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idusuario\": 1,\r\n    \"nome\": \"João Silva\",\r\n    \"email\": \"joao.silva@example.com\",\r\n    \"senha\": \"novaSenha123\",\r\n    \"ativo\": true,\r\n    \"permissao\": {\r\n        \"idpermissao\": 2  \r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/barbearia-barbadus/usuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"barbearia-barbadus",
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
