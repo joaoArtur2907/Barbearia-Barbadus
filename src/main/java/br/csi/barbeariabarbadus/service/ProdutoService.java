@@ -24,7 +24,7 @@ public class ProdutoService {
     }
 
     public Produto getProduto(Integer id) {
-        return this.repository.findById(id).orElse(null); // Retorna null se o produto não for encontrado
+        return this.repository.findById(id).orElse(null);
     }
 
     public void excluir(Integer id) {

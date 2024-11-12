@@ -24,7 +24,7 @@ public class PermissaoService {
     }
 
     public Permissao getPermissao(Integer id) {
-        return this.repository.findById(id).orElse(null); // Retorna null se não encontrado
+        return this.repository.findById(id).orElse(null);
     }
 
     public void excluir(Integer id) {

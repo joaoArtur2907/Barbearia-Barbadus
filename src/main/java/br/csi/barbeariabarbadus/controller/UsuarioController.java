@@ -97,7 +97,7 @@ public class UsuarioController {
     }
 
     /*
-   http://localhost:8080/aria-barbadus/usuario/uuid/edddd513-9ecd-45ac-8387-16256eae723a
+   http://localhost:8080/barbearia-barbadus/usuario/uuid/edddd513-9ecd-45ac-8387-16256eae723a
    */
     @PutMapping("/uuid")
     public void atualizarUUID(@RequestBody Usuario usuario){
