@@ -9,4 +9,6 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
     public Usuario findUsuarioByUuid(UUID uuid);
     public void deleteUsuarioByUuid(UUID uuid);
 
+    public Usuario findByEmail(String email);
+
 }

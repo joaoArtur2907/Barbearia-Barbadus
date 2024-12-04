@@ -1,5 +1,6 @@
 package br.csi.barbeariabarbadus.controller;
 
+import br.csi.barbeariabarbadus.model.DadosUsuario;
 import br.csi.barbeariabarbadus.model.Usuario;
 import br.csi.barbeariabarbadus.service.UsuarioService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -12,6 +13,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -103,5 +105,8 @@ public class UsuarioController {
     public void atualizarUUID(@RequestBody Usuario usuario){
         this.service.atualizarUUID(usuario);
     }
+
+
+
 
 }
