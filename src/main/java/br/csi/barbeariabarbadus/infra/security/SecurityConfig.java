@@ -25,32 +25,37 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         return http
-
+                .csrf(crsf-> crsf.disable())
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth->
                         auth.requestMatchers(HttpMethod.POST, "/login").permitAll()
-                                // usuario
-//                                .requestMatchers(HttpMethod.GET, "/usuario/**").hasAnyAuthority("ROLE_ADMIN","ROLE_FUNCIONARIO")
-                                .requestMatchers(HttpMethod.POST, "/usuario").hasAuthority("ROLE_ADMIN")
-                                .requestMatchers(HttpMethod.GET, "/usuario").hasAuthority("ROLE_ADMIN")
-                                .requestMatchers(HttpMethod.PUT, "/usuario").hasAuthority("ROLE_ADMIN")
+                                // Usuário
+                                .requestMatchers(HttpMethod.POST, "/usuario/*").hasAnyAuthority("ROLE_ADMIN", "ROLE_FUNCIONARIO")
+                                .requestMatchers(HttpMethod.GET, "/usuario").hasAnyAuthority("ROLE_ADMIN", "ROLE_FUNCIONARIO")
+                                .requestMatchers(HttpMethod.PUT, "/usuario").hasAnyAuthority("ROLE_ADMIN", "ROLE_FUNCIONARIO")
                                 .requestMatchers(HttpMethod.DELETE, "/usuario").hasAuthority("ROLE_ADMIN")
 
-                                // produto
-                                .requestMatchers(HttpMethod.POST, "/permissao").hasAuthority("ROLE_ADMIN")
+                                // Produto
+                                .requestMatchers(HttpMethod.POST, "/produto/*").hasAnyAuthority("ROLE_ADMIN", "ROLE_FUNCIONARIO")
+                                .requestMatchers(HttpMethod.GET, "/produto/listar").permitAll()
+                                .requestMatchers(HttpMethod.GET, "/produto").hasAnyAuthority("ROLE_ADMIN", "ROLE_FUNCIONARIO")
 
-                                .requestMatchers(HttpMethod.GET, "/produto").hasAuthority("ROLE_ADMIN")
+                                // Permissão
+                                .requestMatchers(HttpMethod.POST, "/permissao").hasAuthority("ROLE_ADMIN")
                                 .requestMatchers(HttpMethod.GET, "/permissao").hasAuthority("ROLE_ADMIN")
-                                .requestMatchers(HttpMethod.GET, "/usuario").hasAuthority("ROLE_FUNCIONARIO")
-                                .requestMatchers(HttpMethod.GET, "/usuario").hasAuthority("ROLE_CLIENTE")
-                                .requestMatchers(HttpMethod.GET, "/usuario").hasAuthority("ROLE_FUNCIONARIO")
-//                                .requestMatchers(HttpMethod.POST, "/produto/**").hasAnyAuthority("ROLE_CLIENTE", "ROLE_ADMIN","ROLE_FUNCIONARIO")
-//                                .requestMatchers(HttpMethod.GET, "/produto/listar").permitAll()
-//                                .requestMatchers(HttpMethod.GET, "/permissao/listar").permitAll()
+                                .requestMatchers(HttpMethod.PUT, "/permissao").hasAuthority("ROLE_ADMIN")
+                                .requestMatchers(HttpMethod.DELETE, "/permissao").hasAuthority("ROLE_ADMIN")
+
+                                // Venda
+                                .requestMatchers(HttpMethod.POST, "/venda/*").hasAnyAuthority("ROLE_ADMIN", "ROLE_FUNCIONARIO")
+                                .requestMatchers(HttpMethod.GET, "/venda/*").hasAnyAuthority("ROLE_ADMIN", "ROLE_FUNCIONARIO")
+                                .requestMatchers(HttpMethod.PUT, "/venda/*").hasAnyAuthority("ROLE_ADMIN", "ROLE_FUNCIONARIO")
+                                .requestMatchers(HttpMethod.DELETE, "/venda/*").hasAnyAuthority("ROLE_ADMIN", "ROLE_FUNCIONARIO")
+
+
 
                                 .anyRequest().authenticated())
                 .addFilterBefore(this.autenticacaoFilter, UsernamePasswordAuthenticationFilter.class)
-                .csrf(crsf-> crsf.disable())
                 .build();
 
 

@@ -38,6 +38,16 @@
 		{
 			"name": "listarPermissoes",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgQmFyYmVhcmlhIEJhcmJhZHVzIiwic3ViIjoiYWRlbWlyQGdtYWlsLmNvbSIsIlJPTEUiOiJhZG1pbiIsImV4cCI6MTczMzk1Njc3N30.7dzF6kLkA9LQvWojzyC1UMac4-ZaTBV3ECje7B_kmno",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -80,11 +90,21 @@
 		{
 			"name": "Add usuario",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgQmFyYmVhcmlhIEJhcmJhZHVzIiwic3ViIjoiY2xpZW50ZUBnbWFpbC5jb20iLCJST0xFIjoiQ2xpZW50ZSIsImV4cCI6MTczMzk1NzYyM30.Gwhg2ElLcH6Olz4yTAn1FvYa4Z45jnrH2U7-aEcX4uM",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nome\": \"João Silva\",\r\n    \"email\": \"joao@gmail.com\",\r\n    \"senha\": \"senhaNaoSegura1235\",\r\n    \"ativo\": true,\r\n    \"permissao\": {\r\n        \"idpermissao\": 2  \r\n    }\r\n}\r\n",
+					"raw": "{\r\n    \"nome\": \"adm\",\r\n    \"email\": \"adm@gmail.com\",\r\n    \"senha\": \"senha\",\r\n    \"ativo\": true,\r\n    \"permissao\": {\r\n        \"idpermissao\": 1\r\n    }\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -109,6 +129,16 @@
 		{
 			"name": "Listar Usuarios",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgQmFyYmVhcmlhIEJhcmJhZHVzIiwic3ViIjoiYWRlbWlyQGdtYWlsLmNvbSIsIlJPTEUiOiJhZG1pbiIsImV4cCI6MTczMzk1Njc3N30.7dzF6kLkA9LQvWojzyC1UMac4-ZaTBV3ECje7B_kmno",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -130,10 +160,20 @@
 		{
 			"name": "Deleta Usuario",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgQmFyYmVhcmlhIEJhcmJhZHVzIiwic3ViIjoiYXVAZ21haWwuY29tIiwiUk9MRSI6IkZ1bmNpb25hcmlvIiwiZXhwIjoxNzMzOTU2MzU2fQ.jryvaCG2B6j7bOv2Hh9SHcCTSEPaIDy8mOqUi_6BtA0",
+							"type": "string"
+						}
+					]
+				},
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/barbearia-barbadus/usuario/4",
+					"raw": "http://localhost:8080/barbearia-barbadus/usuario/14",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -142,7 +182,7 @@
 					"path": [
 						"barbearia-barbadus",
 						"usuario",
-						"4"
+						"14"
 					]
 				}
 			},
@@ -180,6 +220,16 @@
 		{
 			"name": "listar Produtos",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgQmFyYmVhcmlhIEJhcmJhZHVzIiwic3ViIjoiYWRlbWlyQGdtYWlsLmNvbSIsIlJPTEUiOiJhZG1pbiIsImV4cCI6MTczMzk0NTY0OH0.3vrEPEIZPb2HHgCB_Urc4tXherj7IgFg_430XrV2mP4",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -251,6 +301,16 @@
 		{
 			"name": "Listar Venda",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgQmFyYmVhcmlhIEJhcmJhZHVzIiwic3ViIjoiYWRlbWlyQGdtYWlsLmNvbSIsIlJPTEUiOiJhZG1pbiIsImV4cCI6MTczMzk0NzEwNn0.74l1c6paWQEh-4jd2zGgaIUKe7WVVWVQ87Gm1FWjewI",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -396,6 +456,98 @@
 						"venda",
 						"usuario",
 						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar vendas de um produto especifico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/barbearia-barbadus/venda/produto/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"barbearia-barbadus",
+						"venda",
+						"produto",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"adm@gmail.com\",\r\n    \"senha\":\"senha\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/barbearia-barbadus/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"barbearia-barbadus",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete venda",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgQmFyYmVhcmlhIEJhcmJhZHVzIiwic3ViIjoiY2xpZW50ZUBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6WyJST0xFX0NMSUVOVEUiXSwiZXhwIjoxNzMzOTUzMTg0fQ.5ypEvAVhvoM4iJX1VETbXO9vdTlYXHEZHj60Nffvsy4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/barbearia-barbadus/venda/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"barbearia-barbadus",
+						"venda",
+						"7"
 					]
 				}
 			},
